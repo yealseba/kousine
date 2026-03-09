@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "react-day-picker/style.css";
+
+/* react-day-picker dark tema */
+.daypicker-popover {
+  --rdp-accent-color: #e50914;
+  --rdp-accent-background-color: rgba(229, 9, 20, 0.15);
+  --rdp-day-height: 36px;
+  --rdp-day-width: 36px;
+  --rdp-font-size: 0.875rem;
+  color: #e4e4e7;
+}
+
+.daypicker-popover .rdp-root {
+  --rdp-background-color: rgba(255,255,255,0.08);
+}
+
+.daypicker-popover button {
+  color: #e4e4e7;
+}
+
+.daypicker-popover .rdp-day_button:hover:not([disabled]) {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.daypicker-popover .rdp-month_caption {
+  color: white;
+  font-weight: 600;
+}
+
+.daypicker-popover .rdp-weekday {
+  color: #71717a;
+}
+
+body {
+  background: #141414;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 3px;
+}
