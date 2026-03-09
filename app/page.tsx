@@ -1,4 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
+
+export const dynamic = "force-dynamic";
 import { CinemaEvent } from "@/lib/types";
 import { mockEvents } from "@/lib/mockData";
 import Navbar from "./components/Navbar";

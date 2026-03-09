@@ -1,5 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { CinemaEvent } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 import { logoutAction, addEventAction } from "./actions";
 import DateTimePicker from "@/app/components/DateTimePicker";
 import EventRow from "./EventRow";
