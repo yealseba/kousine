@@ -53,7 +53,7 @@ export default async function Home() {
       )}
 
       {pastEvents.length > 0 && (
-        <section className="px-8 md:px-16 py-12">
+        <section className="px-4 md:px-16 py-12">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
             <span className="w-1 h-6 bg-[#e50914] rounded-full inline-block" />
             Geçmiş Etkinlikler
@@ -63,7 +63,7 @@ export default async function Home() {
       )}
 
       {upcomingEvents.length > 1 && (
-        <section className="px-8 md:px-16 py-12">
+        <section className="px-4 md:px-16 py-12">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
             <span className="w-1 h-6 bg-[#e50914] rounded-full inline-block" />
             Yaklaşan Etkinlikler

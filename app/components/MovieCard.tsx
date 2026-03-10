@@ -20,10 +20,10 @@ export default function MovieCard({ event }: { event: CinemaEvent }) {
   });
 
   return (
-    <a href={`/film/${event.id}`} className="flex-shrink-0 w-44 group/card cursor-pointer">
+    <a href={`/film/${event.id}`} className="flex-shrink-0 w-36 md:w-44 group/card cursor-pointer">
       {/* Poster */}
       <div
-        className={`relative w-44 h-64 rounded-md bg-gradient-to-br ${colorClass} overflow-hidden transition-transform duration-300 group-hover/card:scale-105 group-hover/card:z-10`}
+        className={`relative w-36 h-52 md:w-44 md:h-64 rounded-md bg-gradient-to-br ${colorClass} overflow-hidden transition-transform duration-300 group-hover/card:scale-105 group-hover/card:z-10`}
       >
         {event.poster_url ? (
           // eslint-disable-next-line @next/next/no-img-element

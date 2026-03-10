@@ -41,15 +41,15 @@ export default function HeroSection({ event }: { event: CinemaEvent }) {
       )}
 
       {/* Karartma katmanları */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#141414] via-[#141414]/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#141414] via-[#141414]/80 to-[#141414]/60 md:to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent" />
 
       {/* İçerik */}
-      <div className="relative z-10 px-8 md:px-16 max-w-2xl pt-24">
+      <div className="relative z-10 px-4 md:px-16 max-w-2xl pt-24 pb-16 md:pb-0">
         <p className="text-[#e50914] text-sm font-bold tracking-widest uppercase mb-4">
           Gelecek Etkinlik
         </p>
-        <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-4">
           {event.title}
         </h1>
         <p className="text-zinc-400 text-base leading-relaxed mb-6 max-w-lg">

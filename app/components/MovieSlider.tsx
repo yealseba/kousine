@@ -21,7 +21,7 @@ export default function MovieSlider({ events }: { events: CinemaEvent[] }) {
       {/* Left button */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-0 bottom-0 z-10 w-12 bg-gradient-to-r from-[#141414] to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute left-0 top-0 bottom-0 z-10 w-10 bg-gradient-to-r from-[#141414] to-transparent flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
         aria-label="Sola kaydır"
       >
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export default function MovieSlider({ events }: { events: CinemaEvent[] }) {
       {/* Right button */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-0 bottom-0 z-10 w-12 bg-gradient-to-l from-[#141414] to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute right-0 top-0 bottom-0 z-10 w-10 bg-gradient-to-l from-[#141414] to-transparent flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
         aria-label="Sağa kaydır"
       >
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
