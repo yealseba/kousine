@@ -6,6 +6,7 @@ import { mockEvents } from "@/lib/mockData";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import MovieSlider from "./components/MovieSlider";
+import RandomMoviePicker from "./components/RandomMoviePicker";
 
 async function getEvents(): Promise<CinemaEvent[]> {
   try {
@@ -71,6 +72,8 @@ export default async function Home() {
           <MovieSlider events={upcomingEvents.slice(1)} />
         </section>
       )}
+
+      <RandomMoviePicker />
 
       <footer className="text-center text-zinc-700 text-xs py-8">
         Sinema Kulübü &copy; {new Date().getFullYear()}
