@@ -1,7 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import { CinemaEvent } from "@/lib/types";
 import CommentForm from "./CommentForm";
+import { deleteCommentAction } from "@/app/admin/actions";
 
 interface Comment {
   id: number;
@@ -30,6 +32,8 @@ export default async function FilmPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const cookieStore = await cookies();
+  const isAdmin = cookieStore.get("admin_session")?.value === "authenticated";
   const supabase = getSupabase();
 
   const [{ data: event }, { data: comments }] = await Promise.all([
@@ -138,14 +142,28 @@ export default async function FilmPage({
                 <div key={c.id} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-semibold text-white text-sm">{c.username}</span>
-                    <span className="text-xs text-zinc-600">
-                      {new Date(c.created_at).toLocaleDateString("tr-TR", {
-                        day: "numeric",
-                        month: "long",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs text-zinc-600">
+                        {new Date(c.created_at).toLocaleDateString("tr-TR", {
+                          day: "numeric",
+                          month: "long",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </span>
+                      {isAdmin && (
+                        <form action={deleteCommentAction}>
+                          <input type="hidden" name="id" value={c.id} />
+                          <input type="hidden" name="event_id" value={e.id} />
+                          <button
+                            type="submit"
+                            className="text-xs text-zinc-600 hover:text-[#e50914] transition-colors"
+                          >
+                            Sil
+                          </button>
+                        </form>
+                      )}
+                    </div>
                   </div>
                   <p className="text-zinc-300 text-sm leading-relaxed">{c.content}</p>
                 </div>

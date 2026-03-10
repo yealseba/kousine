@@ -126,6 +126,14 @@ export async function deleteEventAction(formData: FormData) {
   redirect("/admin");
 }
 
+export async function deleteCommentAction(formData: FormData) {
+  const supabase = getSupabase();
+  const id = formData.get("id") as string;
+  const eventId = formData.get("event_id") as string;
+  await supabase.from("comments").delete().eq("id", id);
+  redirect(`/film/${eventId}`);
+}
+
 export async function toggleActiveAction(formData: FormData) {
   const supabase = getSupabase();
   const id = formData.get("id") as string;
