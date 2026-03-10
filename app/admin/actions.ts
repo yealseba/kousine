@@ -127,6 +127,10 @@ export async function deleteEventAction(formData: FormData) {
 }
 
 export async function deleteCommentAction(formData: FormData) {
+  const cookieStore = await cookies();
+  if (cookieStore.get("admin_session")?.value !== "authenticated") {
+    redirect("/admin/login");
+  }
   const supabase = getSupabase();
   const id = formData.get("id") as string;
   const eventId = formData.get("event_id") as string;
