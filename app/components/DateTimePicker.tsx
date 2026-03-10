@@ -38,7 +38,9 @@ export default function DateTimePicker({ defaultValue }: Props) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const dateValue = selected ? `${format(selected, "yyyy-MM-dd")}T${time}:00` : "";
+  const dateValue = selected
+    ? new Date(`${format(selected, "yyyy-MM-dd")}T${time}:00`).toISOString()
+    : "";
   const displayText = selected
     ? `${format(selected, "d MMMM yyyy", { locale: tr })} · ${time}`
     : "Tarih ve saat seç";
