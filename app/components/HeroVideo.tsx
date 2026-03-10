@@ -71,15 +71,15 @@ export default function HeroVideo({ trailerUrl, posterUrl }: Props) {
       >
         <iframe
           ref={iframeRef}
-          className="absolute w-full h-full"
-          /* Düşük çözünürlüklü videolar için minimal ölçekleme + hafif blur */
+          className="absolute"
+          /* 16:9 video her ekran oranında (dikey dahil) siyah boşluk bırakmadan kaplar */
           style={{
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%) scale(1.15)",
+            transform: "translate(-50%, -50%)",
+            width: "max(100%, 177.78vh)",
+            height: "max(100%, 56.25vw)",
             filter: "blur(0.4px)",
-            minWidth: "100%",
-            minHeight: "100%",
           }}
           src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&playlist=${youtubeId}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1&vq=hd720`}
           allow="autoplay; encrypted-media"
@@ -106,7 +106,7 @@ export default function HeroVideo({ trailerUrl, posterUrl }: Props) {
       )}
 
       {/* Alt sağ kontroller */}
-      <div className="absolute bottom-10 right-10 z-20 flex items-center gap-3">
+      <div className="absolute bottom-6 right-4 md:bottom-10 md:right-10 z-20 flex items-center gap-2 md:gap-3">
         {/* Oynat/Durdur */}
         <button
           onClick={togglePlay}
